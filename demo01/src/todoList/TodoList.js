@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import "antd/dist/antd.css";
 import TodoListUi from "./TodoListUi";
 import store from "../store";
-import { changeInputAction, updateList } from "../store/actionCreators";
+import { changeInputAction, updateList, getTodolist, getMyListAction } from "../store/actionCreators";
 
 class TodoList extends Component {
   constructor(props) {
@@ -12,6 +12,13 @@ class TodoList extends Component {
       inputValue: store.getState().inputValue
     };
     store.subscribe(this.storeChange.bind(this));
+  }
+
+  componentDidMount(){
+    const action = getMyListAction()
+    store.dispatch(action);
+    // const action = getTodolist();
+    // store.dispatch(action);
   }
 
   storeChange() {
