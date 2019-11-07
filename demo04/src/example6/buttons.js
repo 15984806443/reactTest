@@ -2,7 +2,9 @@ import React, { useContext } from "react";
 import { ColorContext, UPDATE_COLOR } from "./color";
 
 const Buttons = () => {
+  console.log(useContext(ColorContext));
   const { dispatch } = useContext(ColorContext);
+  console.log(dispatch);
   return (
     <React.Fragment>
       <button

@@ -1,11 +1,6 @@
-import React, { useState, createContext, useContext } from "react";
-
-const CountContext = createContext();
-
-function Counter() {
-  let count = useContext(CountContext);
-  return <h2>{count}</h2>;
-}
+import React, { useState, createContext } from "react";
+import Counter from "./example41";
+export const CountContext = createContext();
 
 const Example4 = () => {
   const [count, setCount] = useState(0);
